@@ -1,0 +1,32 @@
+  
+version: "3"
+services:
+  database:
+    build: ./database
+    container_name: memoriz-en-database
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    env_file: 
+      - ./database.env
+    volumes:
+      - /home/yuji/memoriz-en/memoriz-data/mysql:/var/lib/mysql
+    ports: 
+      - "8001:3306"
+    security_opt:
+      - seccomp:unconfined
+    tty: true
+  backend:
+    build: ./backend
+    container_name: memoriz-en-backend
+    depends_on: 
+      - "database"
+    ports: 
+      - "8002:9000"
+    tty: true
+  frontend:
+    build: ./frontend
+    container_name: memoriz-en-frontend
+    ports:
+      - "8003:8000"
+    tty: true
+    depends_on: 
+      - "backend"
