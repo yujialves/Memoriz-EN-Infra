@@ -6,6 +6,7 @@ RUN apt-get update && \
     go get github.com/auth0/go-jwt-middleware && \
     go get github.com/dgrijalva/jwt-go && \
     go get github.com/subosito/gotenv && \
+    go get golang.org/x/crypto/bcrypt && \
     cd && \
     git clone https://github.com/yujialves/Memoriz-EN-Backend
 COPY .env /root/Memoriz-EN-Backend/.env
