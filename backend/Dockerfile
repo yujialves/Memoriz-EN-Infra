@@ -1,6 +1,7 @@
 FROM golang
 RUN apt-get update && \
     apt-get upgrade -y && \
+    cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
     go get github.com/go-sql-driver/mysql && \
     go get github.com/gorilla/mux && \
     go get github.com/auth0/go-jwt-middleware && \
