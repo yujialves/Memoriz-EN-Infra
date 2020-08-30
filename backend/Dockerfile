@@ -9,9 +9,9 @@ RUN apt-get update && \
     go get github.com/subosito/gotenv && \
     go get golang.org/x/crypto/bcrypt && \
     cd && \
-    git clone https://github.com/yujialves/Memoriz-EN-Backend
-COPY .env /root/Memoriz-EN-Backend/.env
-RUN cd /root/Memoriz-EN-Backend && \
+    git clone https://github.com/yujialves/memoriz-en-backend
+COPY .env /root/memoriz-en-backend/.env
+RUN cd /root/memoriz-en-backend && \
     go build main.go
-WORKDIR /root/Memoriz-EN-Backend
+WORKDIR /root/memoriz-en-backend
 CMD ["./main"]

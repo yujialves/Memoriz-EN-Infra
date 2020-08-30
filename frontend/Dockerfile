@@ -4,11 +4,11 @@ RUN cd && \
     apt-get upgrade -y && \
     npm install -g http-server && \
     yarn global add expo-cli && \
-    git clone https://github.com/yujialves/Memoriz-EN-Frontend && \
-    cd Memoriz-EN-Frontend && \
+    git clone https://github.com/yujialves/memoriz-en-frontend && \
+    cd memoriz-en-frontend && \
     npm install
-COPY secrets /root/Memoriz-EN-Frontend/secrets/
-RUN cd /root/Memoriz-EN-Frontend && \
+COPY secrets /root/memoriz-en-frontend/secrets/
+RUN cd /root/memoriz-en-frontend && \
     ls && \
     ls secrets && \
     expo build:web && \
@@ -17,5 +17,5 @@ RUN cd /root/Memoriz-EN-Frontend && \
     mv manifest_temp.json manifest.json && \
     cd ../ && \
     mv web-build frontend
-WORKDIR /root/Memoriz-EN-Frontend
+WORKDIR /root/memoriz-en-frontend
 CMD http-server ./frontend -p 8000
