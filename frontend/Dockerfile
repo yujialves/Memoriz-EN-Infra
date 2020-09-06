@@ -1,7 +1,5 @@
 FROM node:14.5
 RUN cd && \
-    apt-get update && \
-    apt-get upgrade -y && \
     npm install -g http-server && \
     yarn global add expo-cli && \
     git clone https://github.com/yujialves/memoriz-en-frontend && \
