@@ -1,10 +1,9 @@
-FROM node:14.5
+FROM bycedric/expo-cli:3
 RUN cd && \
-    npm install -g http-server && \
-    yarn global add expo-cli && \
+    yarn global add http-server && \
     git clone https://github.com/yujialves/memoriz-en-frontend && \
     cd memoriz-en-frontend && \
-    npm install
+    yarn install
 COPY secrets /root/memoriz-en-frontend/secrets/
 RUN cd /root/memoriz-en-frontend && \
     ls && \
