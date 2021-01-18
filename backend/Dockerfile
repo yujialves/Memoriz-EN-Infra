@@ -4,6 +4,7 @@ RUN cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
     go get github.com/gorilla/mux && \
     go get github.com/auth0/go-jwt-middleware && \
     go get github.com/dgrijalva/jwt-go && \
+    go get github.com/form3tech-oss/jwt-go && \
     go get github.com/subosito/gotenv && \
     go get golang.org/x/crypto/bcrypt && \
     cd && \
