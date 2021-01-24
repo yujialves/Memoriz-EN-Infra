@@ -1,6 +1,6 @@
 FROM golang
 RUN apt upgrade -y && apt update -y && \
-    apk add --no-cache udev ttf-freefont chromium chromium-chromedriver && \
+    apt install -y udev ttf-freefont chromium chromium-chromedriver && \
     cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
     cd && \
     git clone https://github.com/yujialves/memoriz-en-backend
