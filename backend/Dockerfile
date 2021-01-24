@@ -1,10 +1,10 @@
 FROM golang
-RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list && \
-    apt upgrade -y && apt update -y && \
+RUN apt upgrade -y && apt update -y && \
     apt install -y unzip wget curl gnupg && \
-    wget https://dl.google.com/linux/linux_signing_key.pub && \
+    wget --no-check-certificate https://dl-ssl.google.com/linux/linux_signing_key.pub && \
     apt-key add linux_signing_key.pub && \
-    sudo apt update && \
+    sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main " >> /etc/apt/sources.list' && \
+    apt update && \
     apt install -y google-chrome-stable && \
     curl -O https://chromedriver.storage.googleapis.com/88.0.4324.96/chromedriver_linux64.zip && \
     unzip chromedriver_linux64.zip && \
