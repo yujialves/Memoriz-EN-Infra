@@ -1,12 +1,5 @@
 FROM golang
 RUN cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
-    go get github.com/go-sql-driver/mysql && \
-    go get github.com/gorilla/mux && \
-    go get github.com/auth0/go-jwt-middleware && \
-    go get github.com/dgrijalva/jwt-go && \
-    go get github.com/form3tech-oss/jwt-go && \
-    go get github.com/subosito/gotenv && \
-    go get golang.org/x/crypto/bcrypt && \
     cd && \
     git clone https://github.com/yujialves/memoriz-en-backend
 COPY .env /root/memoriz-en-backend/.env
