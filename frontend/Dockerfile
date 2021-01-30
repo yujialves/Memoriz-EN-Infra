@@ -1,6 +1,5 @@
-FROM bycedric/expo-cli:3
+FROM ghcr.io/yujialves/expo-server-image/expo-server:latest
 RUN cd /root && \
-    yarn global add http-server && \
     git clone https://github.com/yujialves/memoriz-en-frontend && \
     cd memoriz-en-frontend && \
     yarn install
