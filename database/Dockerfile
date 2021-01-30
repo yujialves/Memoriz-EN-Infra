@@ -1,5 +1,6 @@
 FROM mariadb:latest
-RUN apt-get update && \
+RUN sed -i 's@archive.ubuntu.com@ftp.jaist.ac.jp/pub/Linux@g' /etc/apt/sources.list && \
+    apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y tzdata && \
     apt-get install -y apparmor-profiles && \

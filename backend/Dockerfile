@@ -1,5 +1,6 @@
 FROM golang
-RUN apt upgrade -y && apt update -y && \
+RUN sed -i 's@archive.ubuntu.com@ftp.jaist.ac.jp/pub/Linux@g' /etc/apt/sources.list && \
+    apt upgrade -y && apt update -y && \
     apt install -y unzip wget curl gnupg && \
     wget --no-check-certificate https://dl-ssl.google.com/linux/linux_signing_key.pub && \
     apt-key add linux_signing_key.pub && \
