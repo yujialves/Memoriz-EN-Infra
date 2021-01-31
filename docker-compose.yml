@@ -21,7 +21,7 @@ services:
       - "database"
     ports: 
       - "8002:9000"
-      volumes: 
+    volumes: 
       - bing_audios:/root/memoriz-en-backend/audios
     tty: true
   frontend:
