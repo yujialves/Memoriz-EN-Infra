@@ -11,9 +11,9 @@ RUN sed -i 's@archive.ubuntu.com@ftp.jaist.ac.jp/pub/Linux@g' /etc/apt/sources.l
     unzip chromedriver_linux64.zip && \
     mv chromedriver /usr/local/bin/ && \
     rm chromedriver_linux64.zip && \
-    cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
-    cd && \
-    git clone https://github.com/yujialves/memoriz-en-backend
+    cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+ADD https://api.github.com/repos/yujialves/memoriz-en-backend/git/refs/heads/master version.json
+RUN git clone https://github.com/yujialves/memoriz-en-backend.git /root/memoriz-en-backend/
 COPY .env /root/memoriz-en-backend/.env
 RUN cd /root/memoriz-en-backend && \
     go build main.go
